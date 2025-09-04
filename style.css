@@ -6,3 +6,8 @@
     display: grid;
     grid-template-columns: repeat(3,100px);
 }
+
+button{
+    height: 100px;
+    width: 100px;
+}
