@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="main-container">
+        <h1>Tic-Tac-Toe</h1>
+        <form action="./submit" method="get">
+            <div>
+                <h2><label for="player1">Player1 Name</label></h2>
+                <input type="text" name="player1" id="player1" required>
+            </div>
+            <div>
+                <h2><label for="player2">Player2 Name</label></h2>
+                <input type="text" name="player2" id="player2" required>
+            </div>
+            <div class="start"><button type="submit" id="start-game"><h3>Start Game</h3></button></div>
+        </form>
+    </div>
     <script src="script2.js"></script>
 </body>
 </html>

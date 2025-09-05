@@ -1,3 +1,19 @@
+function inputPlayer(){
+    const player1 = document.getElementById('player1');
+    const player2 = document.getElementById('player2');
+    form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formElement = event.target;
+        const player1Name = player1.value;
+        const player2Name = player2.value;
+        console.log(player1Name);
+        gameController(player1Name,player2Name);
+        formElement.reset();
+    })
+}
+
+//creating container for game
 const body = document.querySelector('body');
 const container = document.createElement('div');
 container.classList.add('container');
@@ -33,11 +49,11 @@ function resultCheck(winningCombination,array){
   });
 }
 
-function gameController(){
-    const player1 = 'Madhav';
-    const player2 = 'Shreya';
-    const players = [createPlayer(player1,'X'),createPlayer(player2,'O')];
+function gameController(player1Name,player2Name){
+    const players = [createPlayer(player1Name,'O'),createPlayer(player2Name,'X')];
+    console.log(players);
     let activePlayer = players[0];
+    console.log(activePlayer);
     const switchPlayerTurn = () => activePlayer = activePlayer === players[0] ? players[1] : players[0];
     const board = gameBoard();
     board.startGame();
@@ -56,6 +72,11 @@ function gameController(){
                     resetGame();
                     return;
                 }
+                else if(activePlayer.array.length === 5){
+                    alert('Game tied');
+                    resetGame();
+                    return;
+                }
                 switchPlayerTurn();
             });
         });
@@ -68,4 +89,4 @@ function gameController(){
     attachListeners();
 }
 
-const game = gameController();
+const game = inputPlayer();

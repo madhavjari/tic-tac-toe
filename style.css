@@ -2,12 +2,63 @@
     text-align: center;
 }
 
-.container{
+:root{
+    --voilet: rgb(120,94,238);
+}
+
+body{
+    background-color: var(--voilet);
+}
+
+.main-container, form{
     display: grid;
-    grid-template-columns: repeat(3,100px);
+}
+
+h1, h2{
+    color:white;
+}
+
+form{
+    justify-content: center;
+}
+
+input{
+    color: var(--voilet);
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 3em;
+    width: 12em;
+    border-radius: 1em;
+    border: none;
+    text-align: left;
+    padding-left: 1em;
+}
+
+input:focus{
+    outline: none;
+}
+
+.start > button{
+    height: 4em;
+    width: 10em;
+    background-color: white;
+    border: none;
+    border-radius: 1em;
+    color: var(--voilet);
+    margin-top: 1em;
 }
 
 button{
+    cursor:pointer;
     height: 100px;
     width: 100px;
+}
+
+.container{
+    grid-column: 1/3;
+    display:flex;
+    justify-content: center;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3,100px);
 }
